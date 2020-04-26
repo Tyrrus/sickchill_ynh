@@ -1,0 +1,12 @@
+[Unit]
+Description=__APP__ application instance
+After=network.target
+
+[Service]
+Type=simple
+User=__APP__
+Group=__APP__
+ExecStart=/usr/bin/python2.7 __FINALPATH__/SickBeard.py -q --pidfile=/var/run/__APP__/__APP__.pid --datadir=/home/yunohost.app/__APP__ --config=/home/yunohost.app/__APP__/config.ini
+
+[Install]
+WantedBy=multi-user.target
